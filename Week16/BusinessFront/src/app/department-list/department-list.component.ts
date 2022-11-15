@@ -38,7 +38,7 @@ export class DepartmentListComponent implements OnInit {
     // After we delete, we have to refresh the list
     this.DepSrv.delete(
       // First parameter for delete: The callback function
-      (result: string) => {
+      (result: any) => {
         console.log(result);
         this.refresh();
       },
