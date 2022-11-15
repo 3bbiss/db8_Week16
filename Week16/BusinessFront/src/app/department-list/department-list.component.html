@@ -1,0 +1,6 @@
+<h1>All Departments</h1>
+
+<ng-container *ngFor="let dep of TheList">
+    <app-department-detail [department]="dep" 
+        (delete)="doDeleteOne($event)"></app-department-detail>
+</ng-container>

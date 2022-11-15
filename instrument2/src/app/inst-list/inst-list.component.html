@@ -1,0 +1,9 @@
+<h2>Instrument List</h2>
+
+<!-- <ng-container *ngFor="let next of InstSrv.get()">
+    <app-inst-detail [TheInst]="next"></app-inst-detail>
+</ng-container> -->
+
+<ng-container *ngFor="let next of TheList">
+    <app-inst-detail [TheInst]="next"></app-inst-detail>
+</ng-container>
