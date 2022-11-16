@@ -1,0 +1,62 @@
+
+
+
+<div *ngIf="!editMode">
+    <table rules="all">
+        <tbody>
+            <tr>
+                <td>id</td><td>{{employee.id}}</td>
+            </tr>
+            <tr>
+                <td>First Name</td><td>{{employee.firstname}}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td><td>{{employee.lastname}}</td>
+            </tr>
+            <tr>
+                <td>Phone</td><td>{{employee.phone}}</td>
+            </tr>
+            <tr>
+                <td>Email</td><td>{{employee.email}}</td>
+            </tr>
+            <tr>
+                <td>Department</td><td>{{employee.department}}</td>
+            </tr>
+            <tr>
+                <td>Hire Date</td><td>{{employee.hiredate}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="turnOnEditMode()">Edit</button>
+    <button (click)="deleteMe()">Delete</button>
+</div>
+
+<div *ngIf="editMode">
+    <table rules="all">
+        <tbody>
+            <tr>
+                <td>id</td><td>{{employee.id}}</td>
+            </tr>
+            <tr>
+                <td>First Name</td><td> <input [(ngModel)]="editFirstName" type="text"/> </td>
+            </tr>
+            <tr>
+                <td>Last Name</td><td><input [(ngModel)]="editLastName" type="text"/> </td>
+            </tr>
+            <tr>
+                <td>Phone</td><td><input [(ngModel)]="editPhone" type="text"/> </td>
+            </tr>
+            <tr>
+                <td>Email</td><td><input [(ngModel)]="editEmail" type="text"/> </td>
+            </tr>
+            <tr>
+                <td>Department</td><td><input [(ngModel)]="editDepartment" type="text"/> </td>
+            </tr>
+            <tr>
+                <td>Hire Date</td><td><input [(ngModel)]="editHireDate" type="date"/> </td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="saveChanges()">Save Changes</button>
+    <button (click)="cancel()">Cancel Changes</button>
+</div>

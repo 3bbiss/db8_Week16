@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ApiResponse } from './api-response';
 import { Department } from './department';
 
 @Injectable({
@@ -45,11 +46,11 @@ export class DepartmentService {
 
 	delete(cb: any, id: string) {
 		// Typo! Take out the [].
-		this.http.delete<string>(`https://localhost:7265/department/${id}`).subscribe(cb);
+		this.http.delete<ApiResponse>(`https://localhost:7265/department/${id}`).subscribe(cb);
 	}
 
 	update(cb: any, dep: Department) {
-		this.http.put<string>('https://localhost:7265/department', dep).subscribe(cb);
+		this.http.put<ApiResponse>('https://localhost:7265/department', dep).subscribe(cb);
 	}
 
 

@@ -1,0 +1,19 @@
+<div>
+
+    <div>
+        <h1>Add New Employee</h1>
+        First Name: <input type="text" [(ngModel)]="newFirstName" /> <br/>
+        Last Name: <input type="text" [(ngModel)]="newLastName"  /> <br/>
+        Phone: <input type="text" [(ngModel)]="newPhone"  /> <br/>
+        Email: <input type="text" [(ngModel)]="newEmail"  /> <br/>
+        Department: <input type="text" [(ngModel)]="newDepartment"  /> <br/>
+        Hire Date: <input type="date" [(ngModel)]="newHireDate"  /> <br/>
+        <button (click)="saveNew()">Save</button>
+    </div>
+
+    <br/> <br/>
+
+    <ng-container *ngFor="let emp of TheList">
+        <app-employee-detail [employee]="emp" (update)="updateOne($event)" (delete)="deleteOne($event)"></app-employee-detail>
+    </ng-container>
+</div>

@@ -51,19 +51,19 @@ namespace BusinessV2API.Controllers
 
         // (D)elete
         [HttpDelete("{id}")]
-        public string Delete(string id)
+        public ApiResponse Delete(string id)
         {
             Department.Delete(id);
-            return "{\"status\": \"ok\"}";
+            return new ApiResponse() { status = "ok" };
         }
 
 
         // (U)pdate
         [HttpPut]
-        public Object Update(Department dep)
+        public ApiResponse Update(Department dep)
         {
             Department.Update(dep);
-            return new { status = "ok" };
+            return new ApiResponse() { status = "ok" };
         }
     }
 }
